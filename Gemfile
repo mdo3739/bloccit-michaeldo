@@ -9,6 +9,7 @@ group :development do
 	gem 'sqlite3'
 end
 
+gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
