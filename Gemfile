@@ -7,9 +7,12 @@ group :production do
 end
 group :development do
 	gem 'sqlite3'
+	gem 'pry-rails'
 end
 
 gem 'bootstrap-sass'
+gem 'faker'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
