@@ -7,7 +7,11 @@ group :production do
 end
 group :development do
 	gem 'sqlite3'
+<<<<<<< HEAD
 	gem 'pry-rails'
+=======
+	gem "rails-erd"
+>>>>>>> models-assignment
 end
 
 gem 'bootstrap-sass'
