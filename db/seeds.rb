@@ -8,7 +8,7 @@ require 'faker'
   )
  end
  posts = Post.all
- if Post.find(title: "Original Post").nil?
+ unless Post.where(title: "Original Post")
  	Post.create!(
  		title: "Original Post"
  		body:  "Original Body"
