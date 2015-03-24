@@ -1,10 +1,20 @@
 <h1>All Posts</h1>
-	<% @posts.each do |post| %>
-		<div class="media">
-			<div class="media-body">
-				<h4 class="media-heading">
+<% ad = Advertisement.all.sample %>
+
+<div class="media" id="advertisement">
+	<div class="media-body">
+		<h4 class="media-heading">
+			<%= link_to ad.title, advertisements_path %>
+		</h4>
+		<small>Sponsored by <%= link_to "Bloc", "http://www.bloc.io" %></small>
+	</div>
+</div>
+<% @posts.each do |post| %>
+	<div class="media">
+		<div class="media-body">
+			<h4 class="media-heading">
 					<%= link_to post.title, post %>
-				</h4>
-			</div>
+			</h4>
 		</div>
-	<% end %>
+	</div>
+<% end %>
