@@ -1,2 +1,12 @@
-<h1>Summary#edit</h1>
-<p>Find me in app/views/summary/edit.html.erb</p>
+<h1><%= @post.title %></h1>
+
+
+<div class="row">
+	<%= form_for [@topic, @post, @summary] do |f| %>
+		<div class="form-group">
+			<%= f.label :summary %>
+			<%= f.text_area :body %>
+		</div>
+		<%= f.submit "Save" %>
+	<% end %>
+</div>
