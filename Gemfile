@@ -13,7 +13,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'faker'
-#gem 'quiet_assets'
+gem 'quiet_assets'
 gem 'devise'
 gem 'figaro', '1.0'
 gem 'pundit'
