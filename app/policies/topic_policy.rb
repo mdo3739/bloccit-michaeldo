@@ -8,6 +8,6 @@ class TopicPolicy < ApplicationPolicy
 	end
 
 	def update?
-		self.create?
+		create?
 	end
 end
