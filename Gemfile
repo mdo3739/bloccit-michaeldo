@@ -11,13 +11,14 @@ group :development do
 	gem "rails-erd"
 end
 
-gem 'bootstrap-sass'
-gem 'faker'
-gem 'quiet_assets'
-gem 'devise'
-gem 'figaro', '1.0'
-gem 'pundit'
-gem 'redcarpet'
+gem 'bootstrap-sass'  # handles css
+gem 'faker'           # creates fake data for seeds
+gem 'quiet_assets'    # hides asset pipeline logs
+gem 'devise'          # user authentication
+gem 'figaro', '1.0'   # handles sensitive data
+gem 'pundit'          # authorization
+gem 'redcarpet'       # markdown language
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
