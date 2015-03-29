@@ -8,4 +8,21 @@ class Post < ActiveRecord::Base
 	validates :body, length: {minimum: 20}, presence: true
 	validates :topic, presence: true
 	validates :user, presence: true
+
+	markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, {})
+	
+	def markdown_title
+		render_as_markdown(self.title)
+	end
+
+	def markdown_body
+		render_as_markdown(self.body)
+	end
+
+	private
+
+	def render_as_markdown(text)
+		markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, {})
+		(markdown.render text).html_safe
+	end
 end
