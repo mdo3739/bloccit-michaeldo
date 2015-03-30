@@ -12,3 +12,9 @@
 SENDGRID_USERNAME: app34564089@heroku.com
 SENDGRID_PASSWORD: 3zp3n4f6
 secret_key_base: 6043d7bdec0a91cfa7a475f98d7061ee58a8bbaff83531fe4edc6bb05b6783b066848fcc3f719160174de36a87f7d4f4b85e25c2580e9725c4f24da42d3c674a
+AWS_ACCESS_KEY_ID: AKIAIEWINY4Z4K72SRXQ
+AWS_SECRET_ACCESS_KEY: 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
+development:
+  AWS_BUCKET: bloccit-development-michaeldo
+production:
+  AWS_BUCKET: bloccit-production-michaeldo
