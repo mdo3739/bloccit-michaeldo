@@ -10,6 +10,7 @@
 			<div class="media">
 				<div class="media-body">
 					<h4 class="media-heading">
+						<%= image_tag(post.pic.small.url) %>
 						<%= link_to (markdown_to_html post.title), [@topic, post] %>
 					</h4>
 					<small>
