@@ -18,6 +18,9 @@ gem 'devise'          # user authentication
 gem 'figaro', '1.0'   # handles sensitive data
 gem 'pundit'          # authorization
 gem 'redcarpet'       # markdown language
+gem 'carrierwave'     # allows uploading of files
+gem 'mini_magick'     # image library
+gem 'fog'             # cloud storage system for images (amazon s3)
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
