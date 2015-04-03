@@ -1,4 +1,9 @@
 class PostPolicy < ApplicationPolicy
+	
+	def destroy?
+		user.present? && (record.user == user || user.admin? || user.moderator?)
+	end
+
 	class Scope
 		attr_reader :user, :scope
 =begin
@@ -16,6 +21,6 @@ class PostPolicy < ApplicationPolicy
 				scope.where(user: @user)
 			end
 
-		end
-=end	end
+=end		end
+	end
 end
