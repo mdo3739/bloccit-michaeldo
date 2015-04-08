@@ -41,4 +41,5 @@ module ApplicationHelper
 		end
 		page_links.html_safe
 	end
+
 end

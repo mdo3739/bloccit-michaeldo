@@ -32,4 +32,21 @@ class Post < ActiveRecord::Base
 
 		update_attribute(:rank, new_rank)
 	end
+
+	markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, {})
+	
+	def markdown_title
+		render_as_markdown(self.title)
+	end
+
+	def markdown_body
+		render_as_markdown(self.body)
+	end
+
+	private
+
+	def render_as_markdown(text)
+		markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, {})
+		(markdown.render text).html_safe
+	end
 end
