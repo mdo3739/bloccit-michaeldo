@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+
+<div class="row">
+	<%= form_for [@topic, @post, @summary] do |f| %>
+		<div class="form-group">
+			<%= f.label :summary %>
+			<%= f.text_area :body %>
+		</div>
+		<%= f.submit "Save" %>
+	<% end %>
+</div>
