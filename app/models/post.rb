@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	belongs_to :user
 	belongs_to :topic
+	has_one :summary
 	has_many :votes, dependent: :destroy
 	default_scope {order('rank DESC')}
 	scope :ordered_by_title, -> {reorder(:title)}

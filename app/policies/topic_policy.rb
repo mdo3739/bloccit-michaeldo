@@ -10,4 +10,8 @@ class TopicPolicy < ApplicationPolicy
 	def update?
 		create?
 	end
+
+	def destroy?
+		self.create?
+	end
 end
