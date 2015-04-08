@@ -10,6 +10,12 @@
 			submitted <%= time_ago_in_words(@post.created_at) %> ago by
 			<%= @post.user.name %>
 		</small>
+	<div class="col-md-4">
+		<% if @summary.nil? %>
+			<%= link_to "Write Summary", new_topic_post_summary_path(@topic, @post), class: 'btn btn-success' %>
+		<% else %>
+			<%= link_to "Summary", [@post, @summary] %>
+		<% end %>
 		<% if policy(@post).edit? %>
 			<%=  link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
 		<% end %>
