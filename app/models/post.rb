@@ -1,3 +1,5 @@
+require 'paginate'
+
 class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	belongs_to :user
@@ -5,6 +7,7 @@ class Post < ActiveRecord::Base
 	has_many :votes, dependent: :destroy
 	default_scope {order('rank DESC')}
 	scope :ordered_by_title, -> {reorder(:title)}
+	extend Paginate
 
 	validates :title, length: {minimum: 5}, presence: true
 	validates :body, length: {minimum: 20}, presence: true
