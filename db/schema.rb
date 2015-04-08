@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150408065233) do
     t.integer  "user_id"
     t.integer  "topic_id"
     t.float    "rank"
+    t.string   "pic"
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
