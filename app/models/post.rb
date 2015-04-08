@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
 	default_scope {order('rank DESC')}
 	scope :ordered_by_title, -> {reorder(:title)}
 	extend Paginate
+	mount_uploader :pic, PostPicUploader
 
 	validates :title, length: {minimum: 5}, presence: true
 	validates :body, length: {minimum: 20}, presence: true
