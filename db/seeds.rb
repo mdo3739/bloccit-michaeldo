@@ -40,6 +40,7 @@ topics = Topic.all
 
   # set the created_at to a time within the past year
   post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+  post.create_vote
   post.update_rank
 end
 posts = Post.all
@@ -48,7 +49,7 @@ unless Post.where(title: "Original Post")
  		user:  User.second,
  		title: "Original Post",
  		body:  "Original Body"
- 	)
+ 	).create_vote
 end
 # Create Comments
 200.times do
