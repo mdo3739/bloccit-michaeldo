@@ -17,7 +17,7 @@ module ApplicationHelper
 		redcarpet = Redcarpet::Markdown.new(renderer, extensions)
 		(redcarpet.render markdown).html_safe
 	end
-
+=begin
 	def will_paginate(collection)
 		if collection.model == Topic
 			whole_collection = Topic.all
@@ -41,5 +41,5 @@ module ApplicationHelper
 		end
 		page_links.html_safe
 	end
-
+=end
 end
