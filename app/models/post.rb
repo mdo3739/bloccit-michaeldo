@@ -1,4 +1,4 @@
-require 'paginate'
+#require 'paginate'
 
 class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
@@ -8,15 +8,13 @@ class Post < ActiveRecord::Base
 	has_many :votes, dependent: :destroy
 	default_scope {order('rank DESC')}
 	scope :ordered_by_title, -> {reorder(:title)}
-	extend Paginate
+#	extend Paginate
 	mount_uploader :pic, PostPicUploader
 
 	validates :title, length: {minimum: 5}, presence: true
 	validates :body, length: {minimum: 20}, presence: true
-#	validates :topic, presence: true
-#	validates :user, presence: true
-
-	after_create :create_vote
+	validates :topic, presence: true
+	validates :user, presence: true
 
 	def up_votes
 		votes.where(value: 1).count
@@ -47,13 +45,14 @@ class Post < ActiveRecord::Base
 		render_as_markdown(self.body)
 	end
 
+	def create_vote
+		user.votes.create(value: 1, post: self)
+	end
+
 	private
 
 	def render_as_markdown(text)
 		markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, {})
 		(markdown.render text).html_safe
-
-	def create_vote
-		user.votes.create(value: 1, post: self)
 	end
 end
