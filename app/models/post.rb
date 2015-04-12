@@ -49,6 +49,11 @@ class Post < ActiveRecord::Base
 		user.votes.create(value: 1, post: self)
 	end
 
+	def save_with_initial_vote
+		self.save
+		self.create_vote
+	end
+
 	private
 
 	def render_as_markdown(text)
