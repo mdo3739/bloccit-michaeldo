@@ -14,4 +14,8 @@ class TopicPolicy < ApplicationPolicy
 	def destroy?
 		self.create?
 	end
+
+	def show?
+		record.public? || user.present?
+	end
 end

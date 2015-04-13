@@ -5,4 +5,6 @@ class Topic < ActiveRecord::Base
 
 	validates :name, length: {minimum: 5}
 #	extend Paginate
+
+	scope :visible_to, lambda { |user| user ? all : where(public: true) }
 end

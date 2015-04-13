@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
     @comment = Comment.new
     @comments = @post.comments.all
-    authorize @comment
+    authorize @comment, @topic
 
     @summary = @post.summary
     authorize @post
