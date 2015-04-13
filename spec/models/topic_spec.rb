@@ -4,8 +4,8 @@ describe Topic do
 	describe "scopes" do
 		
 		before do
-			@public_topic = Topic.create
-			@private_topic = Topic.create(public: false)
+			@public_topic = Topic.create(name: "Check Me out")
+			@private_topic = Topic.create(public: false, name: "I dont know why")
 		end
 
 		describe "publicly_viewable" do
@@ -16,7 +16,7 @@ describe Topic do
 
 		describe "privately_viewable" do
 			it "returns a relation of all private topics" do
-				expect(Topic.privately_viewable).to eq(@private_topic)
+				expect(Topic.privately_viewable).to eq([@private_topic])
 			end
 		end
 
