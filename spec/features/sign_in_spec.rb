@@ -8,7 +8,7 @@ describe "Sign in flow" do
 			user = authenticated_user
 			visit root_path
 
-			within '.jumbotron' do
+			within '.user-info' do
 				click_link 'Sign In'
 			end
 			fill_in 'Email', with: user.email
