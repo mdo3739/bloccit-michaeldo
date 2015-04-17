@@ -9,6 +9,7 @@ group :development do
 	gem 'sqlite3'
 	gem 'pry-rails'
 	gem "rails-erd"
+  gem 'spring-commands-rspec'  # makes loading rspec files soooo much faster
 end
 
 gem 'bootstrap-sass'  # handles css
