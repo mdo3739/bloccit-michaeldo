@@ -24,6 +24,7 @@ gem 'mini_magick'     # image library
 gem 'fog'             # cloud storage system for images (amazon s3)
 gem 'will_paginate', '~> 3.0.5'
 gem 'newrelic_rpm'
+gem 'puma'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
