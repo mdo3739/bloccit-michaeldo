@@ -9,7 +9,7 @@ group :development do
 	gem 'sqlite3'
 	gem 'pry-rails'
 	gem "rails-erd"
-  gem 'spring-commands-rspec'  # makes loading rspec files soooo much faster
+  gem 'spring-commands-rspec'  # makes loading rspec files soooo much faster. sike!
 end
 
 gem 'bootstrap-sass'  # handles css
@@ -20,11 +20,12 @@ gem 'figaro', '1.0'   # handles sensitive data
 gem 'pundit'          # authorization
 gem 'redcarpet'       # markdown language
 gem 'carrierwave'     # allows uploading of files
-gem 'mini_magick'     # image library
-gem 'fog'             # cloud storage system for images (amazon s3)
+gem 'mini_magick'     # image library and image manipulation
+gem 'fog'             # cloud storage system for images (supports amazon s3)
 gem 'will_paginate', '~> 3.0.5'
 gem 'newrelic_rpm'
 gem 'puma'
+gem 'factory_girl_rails', '~> 4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
