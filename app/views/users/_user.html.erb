@@ -1,4 +1,4 @@
-<div class="medai">
+<div class="media">
 	<%= link_to user, class: 'media-left' do %>
 		<%= image_tag(user.avatar.profile.url, class: "media-object") if user.avatar? %>
 	<% end %>
@@ -8,7 +8,7 @@
 		</h4>
 		<small>
 			<%= pluralize(user.posts_count, 'post') %>
-			<%= pluralize(user.comments_count, "comment") %>
+			<div class='js-comments-count'><%= pluralize(user.comments_count, "comment") %></div>
 		</small>
 	</div>
 </div>
