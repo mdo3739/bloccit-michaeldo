@@ -2,12 +2,15 @@ require 'rails_helper'
 
 describe User do
 
+	before do
+		@user = create(:user_with_post_and_comment)
+		@user2 = create(:user_with_post_and_comment)
+	end
+
 	describe "#favorited(post)" do
 
 		before do
-			@user = create(:user)
-			@post = create(:post)
-			@user2 = create(:user)
+			@post = @user.posts.first
 			@post.favorites.create(user: @user2)
 		end
 
@@ -27,16 +30,12 @@ describe User do
 	describe ".top-rated" do
 
 		before do
-			@user1 = create(:user_with_post_and_comment)
-
-			@user2 = create(:user_with_post_and_comment)
-
-			@user2.posts.first.comments << create(:comment, user: @user2)
-			#create(:comment, user: @user2)
+			#@user2.posts.first.comments << create(:comment, user: @user2)
+			create(:comment, user: @user2)
 		end
 
 		it "returns users ordered by comments + posts" do
-			expect( User.top_rated).to eq([@user2, @user1])
+			expect( User.top_rated).to eq([@user2, @user])
 		end
 
 		it "stores a 'posts_count' on user" do
@@ -46,8 +45,7 @@ describe User do
 
 		it "stores a 'comments_count' on user" do 
 			users = User.top_rated
-			
-			expect(users.first.comments_count).to eq(2)
+			expect(users.first.comments.count).to eq(2)
 		end
 	end
 end
