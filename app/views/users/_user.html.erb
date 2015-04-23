@@ -8,7 +8,7 @@
 		</h4>
 		<small>
 			<%= pluralize(user.posts_count, 'post') %>
-			<div class='js-comments-count'><%= pluralize(user.comments_count, "comment") %></div>
+			<div class='js-comments-count'><%= pluralize(user.comments.count, "comment") %></div>
 		</small>
 	</div>
 </div>

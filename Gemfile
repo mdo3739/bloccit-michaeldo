@@ -12,6 +12,7 @@ group :development do
   gem 'spring-commands-rspec'  # makes loading rspec files soooo much faster. sike!
 end
 
+
 gem 'bootstrap-sass'  # handles css
 gem 'faker'           # creates fake data for seeds
 gem 'quiet_assets'    # hides asset pipeline logs
